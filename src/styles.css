@@ -7,8 +7,8 @@
   padding: 0;
 }
 :root {
-  --background: rgba(224,255,255, 0.8);
-  --background2: rgba(119,136,153,0.2)
+  --background: rgba(224,244,255, 0.8);
+  --background2: rgba(119,134,153,0.2)
 }
 
 html {
