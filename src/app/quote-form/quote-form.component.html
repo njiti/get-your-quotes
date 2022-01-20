@@ -1,0 +1,57 @@
+<div class="contain">
+  <div class="part1">
+    <div class="welcomeSection">
+      <h1>Welcome to Quote Creator</h1>
+      <p>The first website on the internet that allows you to upload created or existing quotes and have them upvoted or downvoted!</p>
+    </div>
+    <hr>
+    <form #quoteForm='ngForm' (ngSubmit)='onSubmit(quoteForm.value)' (ngSubmit)='quoteForm.reset()'>
+      <div class="form-group">
+        <label for="quote">Please Enter Your Quote:</label>
+        <textarea required ngModel minlength='1' name='quote' #name='ngModel' id="quote" class="form-control" rows="2" ></textarea>
+        <div *ngIf='name.touched && !name.valid' class="alert alert-danger">
+          Quote is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="quoteAuthor">Author of the Quote:</label>
+        <input required ngModel name='quoteAuthor' #quoteAuthor='ngModel' minlength='1' type="text" id="quoteAuthor" class="form-control" />
+        <div *ngIf='quoteAuthor.touched && !quoteAuthor.valid' class="alert alert-danger">
+          Author is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="submittedBy">Submitted By:</label>
+        <input required ngModel name='submittedBy' #submittedBy='ngModel' type="text" id="submittedBy" class="form-control" />
+        <div *ngIf='submittedBy.touched && !submittedBy.valid' class="alert alert-danger">
+          Submitted by?
+        </div>
+      </div>
+      <pre></pre>
+      <button type="submit" class="btn btn-outline-primary" id="submitButton">Submit!</button>
+    </form>
+  </div>
+  <app-quote-details [quotes]='quotes'></app-quote-details>
+</div>
+<br>
+<div class="contain2">
+  <div class="existingQuotes">
+    <h1>Some Amazing Quotes</h1>
+    <p>"What you get by achieving your goals is not as important as what you become by achieving your goals." ~ Henry David Thoreau</p>
+    <br>
+    <p>"If the plan doesn’t work, change the plan, but never the goal." ~ Author Unknown</p>
+    <br>
+    <p>"I destroy my enemies when I make them my friends. ~ Abraham Lincoln"</p>
+    <br>
+    <p>"Holding onto anger is like drinking poison and expecting the other person to die. ~ Author Unkown"</p>
+    <br>
+    <p>"You will succeed because most people are lazy." ~ Shahir Zag</p>
+    <br>
+    <p>"Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway." ~ Earl Nightingale</p>
+    <br>
+    <p>"The reason why you feel alone and like you don't have many people around you is because your purpose is so much greater." ~ Author Unknown</p>
+    <br>
+    <p>"Because God is with me.  I can." ~ Timothy Kirathe</p>
+    <br>
+  </div>
+</div>
